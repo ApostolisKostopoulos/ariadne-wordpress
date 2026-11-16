@@ -1,0 +1,55 @@
+# Checks on every push and pull request (a public repository: GitHub Actions minutes are free).
+#   php -l on every PHP file with the oldest and newest PHP the plugin supports;
+#   WordPress Plugin Check (wordpress/plugin-check-action, Apache-2.0) on the plugin folder;
+#   the zip build, kept as an artifact for a week.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  php-lint:
+    name: php -l (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.3']
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: php -l on every file
+        run: |
+          docker run --rm -v "$PWD:/app" -w /app "php:${{ matrix.php }}-cli" \
+            sh -c 'find . -path ./.git -prune -o -name "*.php" -print0 | xargs -0 -n1 php -l'
+
+  plugin-check:
+    name: Plugin Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Install gettext
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq gettext
+      - name: Build the .mo files
+        run: bin/build-mo.sh
+      - uses: wordpress/plugin-check-action@10857da14b6c2246d15402b3e69f777edcf8c12e # v1.1.9
+        with:
+          build-dir: ./ariadne-ai-assistant
+
+  zip:
+    name: Zip build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Install gettext
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq gettext
+      - name: Build the zip
+        run: bin/build-zip.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ariadne-ai-assistant
+          path: dist/ariadne-ai-assistant.zip
+          retention-days: 7

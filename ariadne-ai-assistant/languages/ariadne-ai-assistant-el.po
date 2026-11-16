@@ -1,0 +1,142 @@
+# Greek translation of Ariadne AI Assistant for WordPress.
+# Written for a Greek shop owner, not word for word (εσύ, Ariadne is feminine).
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ariadne AI Assistant for WordPress 1.0.0\n"
+"Report-Msgid-Bugs-To: https://ariadnebot.com/contact/\n"
+"Last-Translator: Ariadne\n"
+"Language-Team: Ariadne\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-11-16T14:07:29+00:00\n"
+"PO-Revision-Date: 2026-11-16 16:00+0200\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ariadne-ai-assistant\n"
+
+#. Plugin Name of the plugin
+msgid "Ariadne AI Assistant for WordPress"
+msgstr "Ariadne AI Assistant for WordPress"
+
+#. Plugin URI of the plugin
+msgid "https://ariadnebot.com/help/wordpress/"
+msgstr "https://ariadnebot.com/el/help/wordpress/"
+
+#. Description of the plugin
+msgid "Adds the Ariadne AI assistant to your site and connects it to your Ariadne account with one click, with no code to copy."
+msgstr "Βάζει τον βοηθό AI της Ariadne στο site σου και τον συνδέει με τον λογαριασμό σου με ένα κλικ, χωρίς να αντιγράψεις κώδικα."
+
+#. Author of the plugin
+msgid "Ariadne"
+msgstr "Ariadne"
+
+#. Author URI of the plugin
+msgid "https://ariadnebot.com/"
+msgstr "https://ariadnebot.com/el/"
+
+msgid "Sorry, you are not allowed to do this."
+msgstr "Δεν έχεις δικαίωμα να το κάνεις αυτό."
+
+msgid "Ariadne AI Assistant"
+msgstr "Ο βοηθός AI της Ariadne"
+
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+msgid "Connected to Ariadne. For now only you can see the assistant. Open the Ariadne dashboard to try it and show it to everyone."
+msgstr "Συνδέθηκε με την Ariadne. Προς το παρόν τον βοηθό τον βλέπεις μόνο εσύ. Άνοιξε τον πίνακα της Ariadne για να τον δοκιμάσεις και να τον ανοίξεις για όλους."
+
+msgid "Connected to Ariadne. The assistant now shows on your site."
+msgstr "Συνδέθηκε με την Ariadne. Ο βοηθός εμφανίζεται πλέον στο site σου."
+
+msgid "Connecting didn't finish. Please try again."
+msgstr "Η σύνδεση δεν ολοκληρώθηκε. Δοκίμασε ξανά."
+
+msgid "This connect link has expired or was already used. Press \"Connect to Ariadne\" again."
+msgstr "Αυτός ο σύνδεσμος σύνδεσης έληξε ή έχει ήδη χρησιμοποιηθεί. Πάτα ξανά «Σύνδεση με την Ariadne»."
+
+msgid "Connecting was cancelled. Nothing changed."
+msgstr "Η σύνδεση ακυρώθηκε. Δεν άλλαξε τίποτα."
+
+msgid "Disconnected. The assistant no longer shows on your site."
+msgstr "Αποσυνδέθηκε. Ο βοηθός δεν εμφανίζεται πλέον στο site σου."
+
+msgid "Settings saved."
+msgstr "Οι ρυθμίσεις αποθηκεύτηκαν."
+
+msgid "Site key saved."
+msgstr "Το κλειδί site αποθηκεύτηκε."
+
+msgid "That doesn't look like a site key. It starts with pk_ followed by 24 letters and digits."
+msgstr "Αυτό δεν μοιάζει με κλειδί site. Ξεκινά με pk_ και ακολουθούν 24 γράμματα και αριθμοί."
+
+msgid "Open the Ariadne dashboard"
+msgstr "Άνοιξε τον πίνακα της Ariadne"
+
+msgid "Status"
+msgstr "Κατάσταση"
+
+msgid "Connected with a site key you pasted by hand."
+msgstr "Συνδέθηκε με κλειδί site που έβαλες με το χέρι."
+
+#. translators: %s: the name of the site in Ariadne.
+#, php-format
+msgid "Connected to Ariadne as \"%s\"."
+msgstr "Συνδέθηκε με την Ariadne ως «%s»."
+
+msgid "Connected to Ariadne."
+msgstr "Συνδέθηκε με την Ariadne."
+
+msgid "Site key:"
+msgstr "Κλειδί site:"
+
+msgid "While preview mode is on in the Ariadne dashboard, only you and your team see the assistant."
+msgstr "Όσο η λειτουργία προεπισκόπησης είναι ενεργή στον πίνακα της Ariadne, τον βοηθό τον βλέπεις μόνο εσύ και η ομάδα σου."
+
+msgid "On your site"
+msgstr "Στο site σου"
+
+msgid "Show the assistant on my site"
+msgstr "Να εμφανίζεται ο βοηθός στο site μου"
+
+msgid "While this is off, the assistant does not show on your site, even for you."
+msgstr "Όσο είναι κλειστό, ο βοηθός δεν εμφανίζεται στο site σου, ούτε σε σένα."
+
+msgid "Save"
+msgstr "Αποθήκευση"
+
+msgid "Disconnect"
+msgstr "Αποσύνδεση"
+
+msgid "Disconnecting removes the assistant from this site. Your Ariadne account and its data stay as they are."
+msgstr "Με την αποσύνδεση ο βοηθός φεύγει από αυτό το site. Ο λογαριασμός σου στην Ariadne και τα δεδομένα του μένουν όπως είναι."
+
+msgid "Not connected yet."
+msgstr "Δεν έχει συνδεθεί ακόμα."
+
+msgid "Press \"Connect to Ariadne\", log in or create an account, and the assistant appears on your site with no code to copy."
+msgstr "Πάτα «Σύνδεση με την Ariadne», συνδέσου ή φτιάξε λογαριασμό και ο βοηθός θα εμφανιστεί στο site σου χωρίς να αντιγράψεις κώδικα."
+
+msgid "Connect to Ariadne"
+msgstr "Σύνδεση με την Ariadne"
+
+msgid "Advanced"
+msgstr "Για προχωρημένους"
+
+msgid "Paste a site key by hand"
+msgstr "Βάλε το κλειδί site με το χέρι"
+
+msgid "Use this only if Connect does not work on your site. Copy the site key from the Install page of the Ariadne dashboard."
+msgstr "Χρησιμοποίησέ το μόνο αν η σύνδεση δεν γίνεται στο site σου. Αντέγραψε το κλειδί site από τη σελίδα «Εγκατάσταση» στον πίνακα της Ariadne."
+
+msgid "Site key"
+msgstr "Κλειδί site"
+
+msgid "Save site key"
+msgstr "Αποθήκευση κλειδιού"
+
+msgid "Need help? See how to connect"
+msgstr "Χρειάζεσαι βοήθεια; Δες πώς γίνεται η σύνδεση"

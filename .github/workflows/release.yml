@@ -1,0 +1,100 @@
+# On a version tag (v1.0.0, v1.0.1, ...):
+#   1. build the .mo files and ariadne-ai-assistant.zip, and attach the zip to the GitHub Release;
+#   2. rebuild ariadnebot.com through its Cloudflare Pages deploy hook (secret PAGES_DEPLOY_HOOK):
+#      the site build downloads releases/latest/download/ariadne-ai-assistant.zip and serves it
+#      at https://ariadnebot.com/downloads/ariadne-ai-assistant.zip, the only address owners get;
+#   3. once the owner has added the wordpress.org secrets SVN_USERNAME and SVN_PASSWORD, publish
+#      the same files to wordpress.org (10up/action-wordpress-plugin-deploy, MIT). Skipped until then.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Zip, GitHub Release, site rebuild
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: The tag matches the plugin's version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          file=ariadne-ai-assistant/ariadne-ai-assistant.php
+          header="$(sed -n 's/^ \* Version: *//p' "$file" | tr -d '\r')"
+          constant="$(sed -n "s/^define( 'ARIADNE_VERSION', '\(.*\)' );/\1/p" "$file" | tr -d '\r')"
+          stable="$(sed -n 's/^Stable tag: *//p' ariadne-ai-assistant/readme.txt | tr -d '\r')"
+          echo "tag $tag, header $header, ARIADNE_VERSION $constant, stable tag $stable"
+          if [ "$tag" != "$header" ] || [ "$tag" != "$constant" ] || [ "$tag" != "$stable" ]; then
+            echo "::error::The tag, the plugin header, ARIADNE_VERSION and the readme's stable tag must all be the same version."
+            exit 1
+          fi
+
+      - name: Install gettext
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq gettext
+
+      - name: Build the zip
+        run: bin/build-zip.sh
+
+      - name: Attach the zip to the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" dist/ariadne-ai-assistant.zip --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" dist/ariadne-ai-assistant.zip \
+              --title "$GITHUB_REF_NAME" --latest \
+              --notes "Ariadne AI Assistant for WordPress ${GITHUB_REF_NAME#v}. Owners download it from https://ariadnebot.com/downloads/ariadne-ai-assistant.zip; the changelog is in readme.txt."
+          fi
+
+      - name: Rebuild ariadnebot.com (Cloudflare Pages deploy hook)
+        env:
+          PAGES_DEPLOY_HOOK: ${{ secrets.PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$PAGES_DEPLOY_HOOK" ]; then
+            echo "::error::The secret PAGES_DEPLOY_HOOK is missing: ariadnebot.com keeps serving the previous zip until its next deploy."
+            exit 1
+          fi
+          # The address is the secret: never -v, and the answer is not printed.
+          curl -fsS -X POST "$PAGES_DEPLOY_HOOK" -o /dev/null
+          echo "Cloudflare Pages build started; it downloads this release's zip."
+
+  wordpress-org:
+    name: wordpress.org (once the SVN secrets exist)
+    needs: release
+    runs-on: ubuntu-latest
+    env:
+      SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+      SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+    steps:
+      - name: Skipped until the owner adds the wordpress.org secrets
+        if: env.SVN_USERNAME == '' || env.SVN_PASSWORD == ''
+        run: echo "::notice::No SVN_USERNAME and SVN_PASSWORD secrets yet, so wordpress.org is skipped."
+
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        if: env.SVN_USERNAME != '' && env.SVN_PASSWORD != ''
+
+      - name: Build the .mo files
+        if: env.SVN_USERNAME != '' && env.SVN_PASSWORD != ''
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq gettext
+          bin/build-mo.sh
+          echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+
+      - uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2 # 2.3.0
+        if: env.SVN_USERNAME != '' && env.SVN_PASSWORD != ''
+        env:
+          SLUG: ariadne-ai-assistant
+          BUILD_DIR: ariadne-ai-assistant
+          ASSETS_DIR: .wordpress-org

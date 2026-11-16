@@ -1,0 +1,183 @@
+# Copyright (C) 2026 Ariadne
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ariadne AI Assistant for WordPress 1.0.0\n"
+"Report-Msgid-Bugs-To: https://ariadnebot.com/contact/\n"
+"Last-Translator: Ariadne\n"
+"Language-Team: Ariadne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-16T14:14:20+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ariadne-ai-assistant\n"
+
+#. Plugin Name of the plugin
+#: ariadne-ai-assistant.php
+msgid "Ariadne AI Assistant for WordPress"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: ariadne-ai-assistant.php
+msgid "https://ariadnebot.com/help/wordpress/"
+msgstr ""
+
+#. Description of the plugin
+#: ariadne-ai-assistant.php
+msgid "Adds the Ariadne AI assistant to your site and connects it to your Ariadne account with one click, with no code to copy."
+msgstr ""
+
+#. Author of the plugin
+#: ariadne-ai-assistant.php
+msgid "Ariadne"
+msgstr ""
+
+#. Author URI of the plugin
+#: ariadne-ai-assistant.php
+msgid "https://ariadnebot.com/"
+msgstr ""
+
+#: includes/class-ariadne-connect.php:66
+#: includes/class-ariadne-connect.php:104
+#: includes/class-ariadne-settings.php:241
+msgid "Sorry, you are not allowed to do this."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:49
+#: includes/class-ariadne-settings.php:170
+msgid "Ariadne AI Assistant"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:66
+msgid "Settings"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:101
+msgid "Connected to Ariadne. For now only you can see the assistant. Open the Ariadne dashboard to try it and show it to everyone."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:103
+msgid "Connected to Ariadne. The assistant now shows on your site."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:105
+msgid "Connecting didn't finish. Please try again."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:107
+msgid "This connect link has expired or was already used. Press \"Connect to Ariadne\" again."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:109
+msgid "Connecting was cancelled. Nothing changed."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:111
+msgid "Disconnected. The assistant no longer shows on your site."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:113
+msgid "Settings saved."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:115
+msgid "Site key saved."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:117
+msgid "That doesn't look like a site key. It starts with pk_ followed by 24 letters and digits."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:137
+#: includes/class-ariadne-settings.php:189
+msgid "Open the Ariadne dashboard"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:173
+msgid "Status"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:178
+msgid "Connected with a site key you pasted by hand."
+msgstr ""
+
+#. translators: %s: the name of the site in Ariadne.
+#: includes/class-ariadne-settings.php:181
+#, php-format
+msgid "Connected to Ariadne as \"%s\"."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:183
+msgid "Connected to Ariadne."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:187
+msgid "Site key:"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:191
+msgid "While preview mode is on in the Ariadne dashboard, only you and your team see the assistant."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:193
+msgid "On your site"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:198
+msgid "Show the assistant on my site"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:201
+msgid "While this is off, the assistant does not show on your site, even for you."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:202
+msgid "Save"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:205
+#: includes/class-ariadne-settings.php:208
+msgid "Disconnect"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:206
+msgid "Disconnecting removes the assistant from this site. Your Ariadne account and its data stay as they are."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:211
+msgid "Not connected yet."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:212
+msgid "Press \"Connect to Ariadne\", log in or create an account, and the assistant appears on your site with no code to copy."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:214
+msgid "Connect to Ariadne"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:218
+msgid "Advanced"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:220
+msgid "Paste a site key by hand"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:221
+msgid "Use this only if Connect does not work on your site. Copy the site key from the Install page of the Ariadne dashboard."
+msgstr ""
+
+#: includes/class-ariadne-settings.php:224
+msgid "Site key"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:227
+msgid "Save site key"
+msgstr ""
+
+#: includes/class-ariadne-settings.php:231
+msgid "Need help? See how to connect"
+msgstr ""

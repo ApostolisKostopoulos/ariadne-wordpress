@@ -1,0 +1,62 @@
+# Local WordPress for trying the plugin against a local Ariadne (README, "Try Connect on
+# your computer"). Official free images only. WordPress answers on http://localhost:8080.
+#
+#   docker compose up -d                      start WordPress and its database
+#   docker compose run --rm cli wp <command>  WP-CLI on the same site
+#   docker compose down                       stop (add -v to delete the site and database)
+name: ariadne-wordpress
+
+x-db-env: &db-env
+  WORDPRESS_DB_HOST: db
+  WORDPRESS_DB_USER: wordpress
+  WORDPRESS_DB_PASSWORD: wordpress
+  WORDPRESS_DB_NAME: wordpress
+
+x-site-volumes: &site-volumes
+  - wordpress:/var/www/html
+  # The plugin folder itself, so a change shows on the next page load.
+  - ./ariadne-ai-assistant:/var/www/html/wp-content/plugins/ariadne-ai-assistant
+  # Points the plugin at localhost (dev/mu-plugins/ariadne-local.php); never in the zip.
+  - ./dev/mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+
+services:
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    depends_on:
+      - db
+    ports:
+      - '127.0.0.1:8080:80'
+    environment:
+      <<: *db-env
+      WORDPRESS_DEBUG: '1'
+    extra_hosts:
+      # The exchange call reaches the API on this computer (see the mu-plugin).
+      - 'host.docker.internal:host-gateway'
+    volumes: *site-volumes
+
+  cli:
+    image: wordpress:cli-php8.3
+    profiles: ['cli']
+    # The wordpress image's files belong to www-data (33); the cli image's own is 82.
+    user: '33:33'
+    depends_on:
+      - db
+    environment:
+      <<: *db-env
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes: *site-volumes
+
+volumes:
+  db:
+  wordpress:

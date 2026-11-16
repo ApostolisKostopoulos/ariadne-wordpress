@@ -1,0 +1,5 @@
+# Built files: bin/build-mo.sh and bin/build-zip.sh make them.
+/dist/
+*.mo
+# Local test values (see .env.example).
+.env

@@ -130,8 +130,8 @@ msgstr "Για προχωρημένους"
 msgid "Paste a site key by hand"
 msgstr "Βάλε το κλειδί site με το χέρι"
 
-msgid "Use this only if Connect does not work on your site. Copy the site key from the Install page of the Ariadne dashboard."
-msgstr "Χρησιμοποίησέ το μόνο αν η σύνδεση δεν γίνεται στο site σου. Αντέγραψε το κλειδί site από τη σελίδα «Εγκατάσταση» στον πίνακα της Ariadne."
+msgid "Use this only if Connect does not work on your site. Copy the site key from Settings › Site in the Ariadne dashboard."
+msgstr "Χρησιμοποίησέ το μόνο αν η σύνδεση δεν γίνεται στο site σου. Αντέγραψε το κλειδί site από τις Ρυθμίσεις › Site στον πίνακα της Ariadne."
 
 msgid "Site key"
 msgstr "Κλειδί site"

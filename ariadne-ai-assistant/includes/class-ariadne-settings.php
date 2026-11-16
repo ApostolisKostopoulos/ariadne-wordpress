@@ -218,7 +218,7 @@ class Ariadne_Settings {
 			<h2><?php esc_html_e( 'Advanced', 'ariadne-ai-assistant' ); ?></h2>
 			<details<?php echo ( $connected && 'manual' === $source ) ? ' open' : ''; ?>>
 				<summary><?php esc_html_e( 'Paste a site key by hand', 'ariadne-ai-assistant' ); ?></summary>
-				<p class="description"><?php esc_html_e( 'Use this only if Connect does not work on your site. Copy the site key from the Install page of the Ariadne dashboard.', 'ariadne-ai-assistant' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Use this only if Connect does not work on your site. Copy the site key from Settings › Site in the Ariadne dashboard.', 'ariadne-ai-assistant' ); ?></p>
 				<?php self::form_open( self::KEY_ACTION ); ?>
 					<p>
 						<label for="ariadne-site-key"><?php esc_html_e( 'Site key', 'ariadne-ai-assistant' ); ?></label><br>

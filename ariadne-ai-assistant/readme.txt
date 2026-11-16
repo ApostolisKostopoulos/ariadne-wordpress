@@ -51,7 +51,7 @@ Clear its cache. If the button still does not show, exclude `loader.js` from the
 
 = Connect stops with an error. =
 
-A security plugin may block the return to `wp-admin/admin-post.php`; allow it and press "Connect to Ariadne" again. If Connect is not possible on your site, copy the site key from the Install page of the Ariadne dashboard and paste it under Settings › Ariadne › Advanced.
+A security plugin may block the return to `wp-admin/admin-post.php`; allow it and press "Connect to Ariadne" again. If Connect is not possible on your site, copy the site key from Settings › Site in the Ariadne dashboard and paste it under Settings › Ariadne › Advanced.
 
 = I created my account in another browser or on my phone. =
 
@@ -78,7 +78,8 @@ Ariadne's [Terms of service](https://ariadnebot.com/terms/) and [Privacy policy]
 == Changelog ==
 
 = 1.0.1 =
-* The plugin is now called "Ariadne AI Assistant" (wordpress.org does not allow "WordPress" in a plugin's name). Nothing else changed.
+* The plugin is now called "Ariadne AI Assistant" (wordpress.org does not allow "WordPress" in a plugin's name).
+* The hint under "Paste a site key by hand" now points to Settings › Site in the Ariadne dashboard, where the key has its copy button.
 
 = 1.0.0 =
 * First release: Connect with one click, the chat on the front end with the opt-outs for speed plugins, Disconnect, an on/off switch, a site key field for sites that cannot use Connect, and a Greek translation.

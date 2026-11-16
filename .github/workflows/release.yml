@@ -55,7 +55,7 @@ jobs:
           else
             gh release create "$GITHUB_REF_NAME" dist/ariadne-ai-assistant.zip \
               --title "$GITHUB_REF_NAME" --latest \
-              --notes "Ariadne AI Assistant for WordPress ${GITHUB_REF_NAME#v}. Owners download it from https://ariadnebot.com/downloads/ariadne-ai-assistant.zip; the changelog is in readme.txt."
+              --notes "Ariadne AI Assistant ${GITHUB_REF_NAME#v}. Owners download it from https://ariadnebot.com/downloads/ariadne-ai-assistant.zip; the changelog is in readme.txt."
           fi
 
       - name: Rebuild ariadnebot.com (Cloudflare Pages deploy hook)

@@ -1,9 +1,9 @@
-# Greek translation of Ariadne AI Assistant for WordPress.
+# Greek translation of Ariadne AI Assistant.
 # Written for a Greek shop owner, not word for word (εσύ, Ariadne is feminine).
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ariadne AI Assistant for WordPress 1.0.0\n"
+"Project-Id-Version: Ariadne AI Assistant 1.0.1\n"
 "Report-Msgid-Bugs-To: https://ariadnebot.com/contact/\n"
 "Last-Translator: Ariadne\n"
 "Language-Team: Ariadne\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Domain: ariadne-ai-assistant\n"
 
 #. Plugin Name of the plugin
-msgid "Ariadne AI Assistant for WordPress"
-msgstr "Ariadne AI Assistant for WordPress"
+msgid "Ariadne AI Assistant"
+msgstr "Ariadne AI Assistant"
 
 #. Plugin URI of the plugin
 msgid "https://ariadnebot.com/help/wordpress/"
@@ -40,6 +40,7 @@ msgstr "https://ariadnebot.com/el/"
 msgid "Sorry, you are not allowed to do this."
 msgstr "Δεν έχεις δικαίωμα να το κάνεις αυτό."
 
+msgctxt "settings page title"
 msgid "Ariadne AI Assistant"
 msgstr "Ο βοηθός AI της Ariadne"
 

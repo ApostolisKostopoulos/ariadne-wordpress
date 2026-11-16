@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Ariadne AI Assistant for WordPress
+ * Plugin Name:       Ariadne AI Assistant
  * Plugin URI:        https://ariadnebot.com/help/wordpress/
  * Description:       Adds the Ariadne AI assistant to your site and connects it to your Ariadne account with one click, with no code to copy.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Ariadne
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ARIADNE_VERSION', '1.0.0' );
+define( 'ARIADNE_VERSION', '1.0.1' );
 define( 'ARIADNE_PLUGIN_FILE', __FILE__ );
 define( 'ARIADNE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 

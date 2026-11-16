@@ -1,9 +1,9 @@
-=== Ariadne AI Assistant for WordPress ===
+=== Ariadne AI Assistant ===
 Tags: ai chatbot, chatbot, woocommerce, customer support, live chat
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,10 +77,16 @@ Ariadne's [Terms of service](https://ariadnebot.com/terms/) and [Privacy policy]
 
 == Changelog ==
 
+= 1.0.1 =
+* The plugin is now called "Ariadne AI Assistant" (wordpress.org does not allow "WordPress" in a plugin's name). Nothing else changed.
+
 = 1.0.0 =
 * First release: Connect with one click, the chat on the front end with the opt-outs for speed plugins, Disconnect, an on/off switch, a site key field for sites that cannot use Connect, and a Greek translation.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+The new name, "Ariadne AI Assistant". Your settings and connection stay as they are.
 
 = 1.0.0 =
 First release.

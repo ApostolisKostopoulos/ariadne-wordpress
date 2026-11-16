@@ -1,4 +1,4 @@
-# Ariadne AI Assistant for WordPress
+# Ariadne AI Assistant
 
 The WordPress plugin of [Ariadne](https://ariadnebot.com), an AI assistant for websites and online shops. It adds the Ariadne chat to a WordPress or WooCommerce site and connects the site to an Ariadne account with one click, with no code to copy.
 
@@ -20,7 +20,7 @@ You need Docker Desktop and a local copy of the Ariadne service (its API on port
 
 1. **Start Ariadne locally**, with the dashboard talking to the real local API: in the Ariadne repository, `docker compose up -d`, then `pnpm dev` with `VITE_API_MODE=real` set for the dashboard.
 2. **Start WordPress**: in this repository, `docker compose up -d`. WordPress answers on http://localhost:8080.
-3. **Install WordPress and turn the plugin on.** Either open http://localhost:8080 and follow the installer, then Plugins › Activate "Ariadne AI Assistant for WordPress"; or copy `.env.example` to `.env`, pick your own local values, and run:
+3. **Install WordPress and turn the plugin on.** Either open http://localhost:8080 and follow the installer, then Plugins › Activate "Ariadne AI Assistant"; or copy `.env.example` to `.env`, pick your own local values, and run:
 
    ```bash
    set -a; . ./.env; set +a
@@ -52,7 +52,7 @@ You need Docker Desktop and a local copy of the Ariadne service (its API on port
 
 ### Note for the wordpress.org submission
 
-WordPress's Plugin Check warns that "WordPress" cannot be used in a plugin's name at all ("Ariadne AI Assistant for WordPress"). The name stays as chosen for now; if the wordpress.org review asks for a change, the fallback is "Ariadne AI Assistant". The readme also has no `Contributors` line yet: add the wordpress.org username that will own the listing.
+The readme has no `Contributors` line yet: add the wordpress.org username that will own the listing.
 
 ## Licence
 

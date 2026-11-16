@@ -46,7 +46,7 @@ class Ariadne_Settings {
 	 */
 	public static function menu() {
 		add_options_page(
-			__( 'Ariadne AI Assistant', 'ariadne-ai-assistant' ),
+			_x( 'Ariadne AI Assistant', 'settings page title', 'ariadne-ai-assistant' ),
 			'Ariadne',
 			'manage_options',
 			self::PAGE,
@@ -167,7 +167,7 @@ class Ariadne_Settings {
 		$site_key  = (string) get_option( Ariadne_Options::SITE_KEY );
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Ariadne AI Assistant', 'ariadne-ai-assistant' ); ?></h1>
+			<h1><?php echo esc_html_x( 'Ariadne AI Assistant', 'settings page title', 'ariadne-ai-assistant' ); ?></h1>
 			<?php self::render_notice( $notice ); ?>
 
 			<h2><?php esc_html_e( 'Status', 'ariadne-ai-assistant' ); ?></h2>

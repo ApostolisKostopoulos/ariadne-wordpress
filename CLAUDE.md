@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-The WordPress plugin "Ariadne AI Assistant for WordPress" (slug and text domain `ariadne-ai-assistant`). It adds the Ariadne chat to a WordPress or WooCommerce site and links the site to an Ariadne account with one click (Connect). Public repository, GPLv2 or later. Plain PHP, no Composer, no build step except the `.mo` files and the zip. WordPress 6.0+, PHP 7.4+.
+The WordPress plugin "Ariadne AI Assistant" (slug and text domain `ariadne-ai-assistant`; renamed from "Ariadne AI Assistant for WordPress" in 1.0.1, since wordpress.org does not allow "WordPress" in a plugin name). It adds the Ariadne chat to a WordPress or WooCommerce site and links the site to an Ariadne account with one click (Connect). Public repository, GPLv2 or later. Plain PHP, no Composer, no build step except the `.mo` files and the zip. WordPress 6.0+, PHP 7.4+.
 
 Ariadne itself (API, dashboard, widget, site) lives in a separate private repository. This repository holds only the plugin, its checks and its release. Nothing private ever comes here: no `.env` values, no internal docs, no addresses other than the public ones below.
 
